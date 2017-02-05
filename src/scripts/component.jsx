@@ -1,4 +1,4 @@
-import componentStyles from '../styles/component.scss';
+import componentStyles from '../styles/component';
 
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
@@ -32,7 +32,7 @@ class __Component extends React.Component {
     if (this.props.shouldShow) {
       return (
         <div className="component">
-          <span>I am showing</span>
+          <span>I am currently showing</span>
           <button onClick={this.doShow}>Show!</button>
         </div>
       )
