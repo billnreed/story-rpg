@@ -1,5 +1,6 @@
 var path = require('path');
 
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
@@ -8,16 +9,23 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: './src/scripts/index.jsx',
+  entry: [
+    // 'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './src/scripts/index.jsx'
+  ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
+  context: path.resolve(__dirname),
   module: {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader:'babel-loader',
+        loaders: ['react-hot-loader', 'babel-loader'],
         exclude: /node_modules/
       },
       {
@@ -28,10 +36,13 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     HtmlWebpackPluginConfig
   ],
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist')
+    contentBase: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    hot: true
   }
 };

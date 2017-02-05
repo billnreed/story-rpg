@@ -32,7 +32,7 @@ class __Component extends React.Component {
     if (this.props.shouldShow) {
       return (
         <div className="component">
-          <span>I am now showing after you clicked the button</span>
+          <span>I am showing</span>
           <button onClick={this.doShow}>Show!</button>
         </div>
       )
