@@ -34,10 +34,11 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss'],
+    extensions: ['.js', '.jsx', '.scss', '.json'],
     alias: {
       scripts: path.resolve(__dirname, 'src/scripts'),
-      styles: path.resolve(__dirname, 'src/styles')
+      styles: path.resolve(__dirname, 'src/styles'),
+      data: path.resolve(__dirname, 'src/data')
     }
   },
   plugins: [
