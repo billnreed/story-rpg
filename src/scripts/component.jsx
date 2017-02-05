@@ -1,3 +1,5 @@
+import componentStyles from '../styles/component.scss';
+
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
@@ -8,7 +10,7 @@ class __Component extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.doShow = this.doShow.bind(this);
   }
 
@@ -29,7 +31,7 @@ class __Component extends React.Component {
   render() {
     if (this.props.shouldShow) {
       return (
-        <div>
+        <div className="component">
           <span>I am showing</span>
           <button onClick={this.doShow}>Show!</button>
         </div>
