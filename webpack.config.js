@@ -13,6 +13,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devtool: "cheap-module-eval-source-map",
   module: {
     loaders: [
       {
@@ -22,7 +23,7 @@ module.exports = {
       },
       {
         test: /\.scss/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        loaders: ['style-loader', 'css-loader?sourceMap', 'sass-loader?sourceMap'],
         exclude: /node_modues/
       }
     ]
