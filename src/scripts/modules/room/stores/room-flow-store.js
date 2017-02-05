@@ -8,12 +8,17 @@ export default alt.createStore(class {
     this.room = RoomFactory.getRoom('beginning');
 
     this.exportPublicMethods({
-      getCurrentRoom: this.getCurrentRoom
+      getCurrentRoom: this.getCurrentRoom,
+      getCurrentRoomState: this.getCurrentRoomState
     });
   }
 
   getCurrentRoom() {
     return this.getState().room;
+  }
+
+  getCurrentRoomState() {
+    return this.getState().room.getRoomStates()["initial"];
   }
 
 });

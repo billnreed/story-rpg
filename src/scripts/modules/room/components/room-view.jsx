@@ -11,18 +11,17 @@ class RoomView extends React.Component {
 
   static getPropsFromStores() {
     const currentRoom = RoomFlowStore.getCurrentRoom();
+    const currentRoomState = RoomFlowStore.getCurrentRoomState();
 
-    return {name: currentRoom.getName(), message: currentRoom.getMessage(), actions: currentRoom.getActions()};
+    return {
+      name: currentRoom.getName(),
+      message: currentRoomState.message,
+      actions: currentRoomState.actions
+    };
   }
 
   constructor(props) {
     super(props);
-  }
-
-  executeAction(action) {
-    if (action.type == "log") {
-      LogActions.push(action.message);
-    }
   }
 
   renderActions() {
@@ -30,7 +29,7 @@ class RoomView extends React.Component {
       <div>
         {this.props.actions.map((action, i) => {
           return (
-            <button key={i} onClick={this.executeAction.bind(this, action)}>
+            <button key={i} onClick={action.execute}>
               {action.text}
             </button>
           )

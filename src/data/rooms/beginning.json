@@ -1,11 +1,21 @@
 {
   "name": "An empty room.",
-  "message": "You wake up in an empty room.",
-  "actions": [
-      {
+  "states": {
+    "initial": {
+      "message": "You wake up in an empty room.",
+      "actions": [{
         "text": "Look around.",
         "type": "log",
         "message": "You look around and see a door behind you."
-      }
-  ]
+      }]
+    },
+    "looked-around": {
+      "message": "",
+      "actions": [{
+        "text": "Open the door.",
+        "type": "log",
+        "message": "You open the door."
+      }]
+    }
+  }
 }
