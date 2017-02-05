@@ -1,5 +1,6 @@
 {
   "name": "An empty room.",
+  "description": "You wake up in an empty room.",
   "states": {
     "initial": {
       "actions": [{
