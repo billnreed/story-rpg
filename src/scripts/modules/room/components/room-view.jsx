@@ -1,3 +1,5 @@
+import roomViewStyles from 'styles/room-view';
+
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
@@ -13,10 +15,12 @@ class RoomView extends React.Component {
     const currentRoom = RoomFlowStore.getCurrentRoom();
     const currentRoomState = RoomFlowStore.getCurrentRoomState();
 
+    const name = currentRoom != null ? currentRoom.getName() : "";
+    const actions = currentRoomState != null ? currentRoomState.getActions() : [];
+    
     return {
-      name: currentRoom.getName(),
-      message: currentRoomState.message,
-      actions: currentRoomState.actions
+      name,
+      actions
     };
   }
 
@@ -26,11 +30,11 @@ class RoomView extends React.Component {
 
   renderActions() {
     return (
-      <div>
+      <div className="room-actions">
         {this.props.actions.map((action, i) => {
           return (
-            <button key={i} onClick={action.execute}>
-              {action.text}
+            <button key={i} onClick={action.execute} className="room-action">
+              {action.label}
             </button>
           )
         })}
@@ -40,9 +44,8 @@ class RoomView extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>{this.props.name}</h1>
-        <p>{this.props.message}</p>
+      <div className="room-view">
+        <h1 className="room-name">{this.props.name}</h1>
         {this.renderActions()}
       </div>
     )

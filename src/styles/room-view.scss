@@ -1,0 +1,18 @@
+.room-view {
+  .room-name {
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .room-actions {
+    margin-bottom: 20px;
+
+    .room-action {
+      border: none;
+      border-bottom: 1px solid #000;
+      background: #fff;
+      cursor: pointer;
+      font-size: 1em;
+    }
+  }
+}

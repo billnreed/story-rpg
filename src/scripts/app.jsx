@@ -3,13 +3,18 @@ import 'styles/app';
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
+import RoomFlowActions from 'scripts/modules/room/actions/room-flow-actions';
+
 import RoomView from 'scripts/modules/room/components/room-view'
 import Log from 'scripts/modules/log/components/log'
 
-class __App extends React.Component {
-  static getStores() {}
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
 
-  static getPropsFromStores() {}
+    RoomFlowActions.transitionToRoom('beginning');
+    RoomFlowActions.transitionToState('initial');
+  }
 
   render() {
     return (
@@ -20,5 +25,3 @@ class __App extends React.Component {
     );
   }
 }
-
-export default __App;

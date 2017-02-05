@@ -2,19 +2,26 @@
   "name": "An empty room.",
   "states": {
     "initial": {
-      "message": "You wake up in an empty room.",
       "actions": [{
-        "text": "Look around.",
-        "type": "log",
-        "message": "You look around and see a door behind you."
+        "label": "Look around.",
+        "steps": [{
+            "type": "log",
+            "message": "You look around and see a door behind you."
+          },
+          {
+            "type": "state-transition",
+            "to": "looked-around"
+          }
+        ]
       }]
     },
     "looked-around": {
-      "message": "",
       "actions": [{
-        "text": "Open the door.",
-        "type": "log",
-        "message": "You open the door."
+        "label": "Open the door.",
+        "steps": [{
+          "type": "log",
+          "message": "It's locked."
+        }]
       }]
     }
   }

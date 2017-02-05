@@ -16,6 +16,10 @@ export default class Room {
     return this.name;
   }
 
+  getRoomState(stateKey) {
+    return this.states[stateKey];
+  }
+
   getRoomStates() {
     return this.states;
   }

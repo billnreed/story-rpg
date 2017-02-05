@@ -1,4 +1,4 @@
-import appStyles from 'styles/main';
+import mainStyles from 'styles/main';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
