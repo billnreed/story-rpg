@@ -3,6 +3,6 @@ import appStyles from 'styles/main';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Component from 'scripts/component';
+import App from 'scripts/app';
 
-ReactDOM.render(<Component />, document.getElementById('component'));
+ReactDOM.render(<App />, document.getElementById('app'));
