@@ -1,8 +1,8 @@
-import appStyles from '../styles/main';
+import appStyles from 'styles/main';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Component from './component';
+import Component from 'scripts/component';
 
 ReactDOM.render(<Component />, document.getElementById('component'));

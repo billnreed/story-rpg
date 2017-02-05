@@ -1,4 +1,4 @@
-import alt from './alt';
+import alt from 'scripts/alt';
 
 const DisplayActions = alt.createActions(class {
   constructor() {

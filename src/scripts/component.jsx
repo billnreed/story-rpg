@@ -1,10 +1,10 @@
-import componentStyles from '../styles/component';
+import componentStyles from 'styles/component';
 
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
-import DisplayActions from './DisplayActions';
-import DisplayStore from './DisplayStore';
+import DisplayActions from 'scripts/DisplayActions';
+import DisplayStore from 'scripts/DisplayStore';
 
 class __Component extends React.Component {
 

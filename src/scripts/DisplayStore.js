@@ -1,5 +1,5 @@
-import alt from './alt';
-import DisplayActions from './DisplayActions';
+import alt from 'scripts/alt';
+import DisplayActions from 'scripts/DisplayActions';
 
 const DisplayStore = alt.createStore(class {
   constructor() {
