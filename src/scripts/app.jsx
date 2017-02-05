@@ -3,8 +3,8 @@ import 'styles/app';
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
-import Room from 'scripts/modules/room/room'
-import Log from 'scripts/modules/log/log'
+import RoomView from 'scripts/modules/room/components/room-view'
+import Log from 'scripts/modules/log/components/log'
 
 class __App extends React.Component {
   static getStores() {}
@@ -14,12 +14,11 @@ class __App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Room />
+        <RoomView />
         <Log />
       </div>
     );
   }
 }
 
-// export default connectToStores(__App);
 export default __App;
