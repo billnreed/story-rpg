@@ -38,7 +38,7 @@ module.exports = {
     alias: {
       scripts: path.resolve(__dirname, 'src/scripts'),
       styles: path.resolve(__dirname, 'src/styles'),
-      data: path.resolve(__dirname, 'src/data')
+      data: path.resolve(__dirname, 'data/')
     }
   },
   plugins: [
