@@ -15,7 +15,7 @@ export default alt.createStore(class {
   }
 
   handlePush(message) {
-    this.messages.push(message);
+    this.messages.unshift(message);
   }
 
   getMessages() {
