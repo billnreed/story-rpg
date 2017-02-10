@@ -17,7 +17,7 @@ class RoomView extends React.Component {
 
     const name = currentRoom != null ? currentRoom.getName() : "";
     const actions = currentRoomState != null ? currentRoomState.getActions() : [];
-    
+
     return {
       name,
       actions

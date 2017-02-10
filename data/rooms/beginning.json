@@ -1,13 +1,12 @@
 {
-  "name": "An empty room.",
-  "description": "You wake up in an empty room.",
+  "name": "You wake up in an empty room.",
   "states": {
     "initial": {
       "actions": [{
         "label": "Look around.",
         "steps": [{
             "type": "log",
-            "message": "You look around and see a door behind you."
+            "message": "You sit up on the hard floor. Rubbing your back to try and restore some feeling in it, you see there's no source of light in the small stone room. Through an iron barred door you see the flicker of candlelight. \"Damn,\" you think, \"what happened this time?\""
           },
           {
             "type": "state-transition",
@@ -20,10 +19,43 @@
       "actions": [{
         "label": "Open the door.",
         "steps": [{
-          "type": "log",
-          "message": "It's locked."
-        }]
+            "type": "log",
+            "message": "It's locked."
+          },
+          {
+            "type": "state-transition",
+            "to": "looked-around-again"
+          }
+        ]
       }]
+    },
+    "looked-around-again": {
+      "actions": [{
+        "label": "Open the door.",
+        "steps": [{
+            "type": "log",
+            "message": "It's locked really well. You'll need to be a bit more clever to get out of here."
+          },
+          {
+            "type": "state-transition",
+            "to": "try-something-else"
+          }
+        ]
+      }]
+    },
+    "try-something-else": {
+      "actions": [{
+          "label": "Look through the bars.",
+          "steps": [{
+            "type": "log",
+            "message": ""
+          }]
+        },
+        {
+          "label": "Look around your cell to try and find something that could help.",
+          "steps": []
+        }
+      ]
     }
   }
 }
