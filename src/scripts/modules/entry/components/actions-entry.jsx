@@ -1,9 +1,9 @@
+import entryStyles from 'styles/entry';
+
 import React from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 
-import entryStyles from 'styles/entry';
-
-class __Entry extends React.Component {
+class __ActionsEntry extends React.Component {
   static getStores() {
     return [];
   }
@@ -38,4 +38,4 @@ class __Entry extends React.Component {
   }
 }
 
-export default connectToStores(__Entry);
+export default connectToStores(__ActionsEntry);

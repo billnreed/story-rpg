@@ -3,7 +3,7 @@ import connectToStores from 'alt-utils/lib/connectToStores';
 
 import storyStyles from 'styles/story';
 
-import Entry from 'scripts/modules/entry/components/entry';
+import ActionsEntry from 'scripts/modules/entry/components/actions-entry';
 
 import StoryStore from 'scripts/modules/story/stores/story-store';
 
@@ -26,13 +26,7 @@ class __Story extends React.Component {
     return (
       <div className="story">
         {this.props.entries.map((entry, i) => {
-          return (
-            <Entry
-              text={entry.getText()}
-              actions={entry.getActions()}
-              key={i}
-            />
-          );
+          return entry;
         })}
       </div>
     )
