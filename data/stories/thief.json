@@ -1,0 +1,15 @@
+[
+  {
+    "text": "You wake up in an empty room.",
+    "actions": [
+      {
+        "label": "Look around",
+        "type": "step"
+      }
+    ]
+  },
+  {
+    "text": "It's still empty.",
+    "actions": []
+  }
+]
