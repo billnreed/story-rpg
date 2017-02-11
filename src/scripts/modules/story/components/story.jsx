@@ -13,24 +13,28 @@ class __Story extends React.Component {
   }
 
   static getPropsFromStores() {
-    return {
-      entries: StoryStore.getEntries(),
-      choices: StoryStore.getChoices()
-    };
+    return {entries: StoryStore.getEntries(), choices: StoryStore.getChoices()};
   }
 
   constructor(props) {
     super(props);
   }
 
+  renderEntries() {
+    return this.props.entries.map((entry, i) => {
+      const isActive = this.props.entries.length - 1 == i;
+      return React.cloneElement(entry, {
+        choice: this.props.choices[i],
+        active: isActive
+      });
+    });
+
+  }
+
   render() {
     return (
       <div className="story">
-        {this.props.entries.map((entry, i) => {
-          return React.cloneElement(entry, {
-            choice: this.props.choices[i]
-          });
-        })}
+        {this.renderEntries()}
       </div>
     )
   }

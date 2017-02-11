@@ -31,10 +31,14 @@ class __ActionsEntry extends React.Component {
   }
 
   render() {
+    let entryActionClassNames = ["entry-actions"];
+    if (!this.props.active) {
+      entryActionClassNames.push("is-disabled");
+    }
     return (
       <div className="entry">
         <p className="entry-text">{this.props.text}</p>
-        <div className="entry-actions">
+        <div className={entryActionClassNames.join(" ")}>
           {this.renderActions()}
         </div>
       </div>
