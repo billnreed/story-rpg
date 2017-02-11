@@ -10,7 +10,7 @@ export default [
     actions={[
       {
         label: "Look around",
-        fn: StoryActions.step
+        fn: () => StoryActions.choose(0)
       }
     ]}
   />,

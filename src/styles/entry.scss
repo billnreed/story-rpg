@@ -10,13 +10,14 @@
       margin-right: 20px;
 
       border: none;
-      border-bottom: 1px solid #000;
+      border-bottom: 1px dashed #000;
       background: #fff;
       cursor: pointer;
       font-size: 1em;
 
-      &:hover {
-        border-bottom: 1px dashed #000;
+      &:hover,
+      &.is-chosen {
+        border-bottom: 1px solid #000;
       }
     }
   }

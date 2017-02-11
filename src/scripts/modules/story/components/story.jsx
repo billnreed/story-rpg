@@ -14,7 +14,8 @@ class __Story extends React.Component {
 
   static getPropsFromStores() {
     return {
-      entries: StoryStore.getEntries()
+      entries: StoryStore.getEntries(),
+      choices: StoryStore.getChoices()
     };
   }
 
@@ -26,7 +27,9 @@ class __Story extends React.Component {
     return (
       <div className="story">
         {this.props.entries.map((entry, i) => {
-          return entry;
+          return React.cloneElement(entry, {
+            choiceIndex: this.props.choices[i]
+          });
         })}
       </div>
     )
