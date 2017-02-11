@@ -5,7 +5,6 @@ import StoryActions from 'scripts/modules/story/actions/story-actions';
 
 export default {
   beginning: <ActionsEntry
-    text="You wake up in an empty room."
     actions={[
       {
         label: "Look around",
@@ -18,13 +17,17 @@ export default {
         fn: () => StoryActions.choose("choose-get-up", "gotUp")
       }
     ]}
-  />,
+  >
+    <p>You wake up in an empty room.</p>
+  </ActionsEntry>,
   lookedAround: <ActionsEntry
-    text="Still empty."
     actions={[]}
-  />,
+  >
+    <p>Still empty.</p>
+  </ActionsEntry>,
   gotUp: <ActionsEntry
-    text="You stand up."
     actions={[]}
-  />
+  >
+    <p>You stand up.</p>
+  </ActionsEntry>
 };

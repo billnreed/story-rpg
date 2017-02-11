@@ -30,7 +30,7 @@ class __ActionsEntry extends React.Component {
       if (this.props.choice == action.id) {
         classNames.push("is-chosen");
       }
-      
+
       return (
         <button
           className={classNames.join(" ")}
@@ -50,7 +50,7 @@ class __ActionsEntry extends React.Component {
     }
     return (
       <div className="entry">
-        <p className="entry-text">{this.props.text}</p>
+        <div className="entry-text">{this.props.children}</div>
         <div className={entryActionClassNames.join(" ")}>
           {this.renderActions()}
         </div>
