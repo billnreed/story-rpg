@@ -19,7 +19,7 @@ class __ActionsEntry extends React.Component {
   renderActions() {
     return this.props.actions.map((action, i) => {
       let classNames = ["entry-action"];
-      if (this.props.choiceIndex == i) {
+      if (this.props.choice == action.id) {
         classNames.push("is-chosen");
       }
       return (

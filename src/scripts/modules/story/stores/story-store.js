@@ -6,7 +6,7 @@ import StoryActions from 'scripts/modules/story/actions/story-actions';
 
 export default alt.createStore(class {
   constructor() {
-    this.progressIndex = 1;
+    this.storyEntries = [thiefStory.beginning];
     this.storyChoices = [];
 
     this.bindListeners({handleChoose: StoryActions.CHOOSE});
@@ -17,21 +17,18 @@ export default alt.createStore(class {
     });
   }
 
-  handleChoose(choiceIndex) {
-    this.storyChoices.push(choiceIndex);
-    this.progressIndex++;
+  handleChoose(args) {
+    const [source, target] = args;
+    
+    this.storyChoices.push(source);
+    this.storyEntries.push(thiefStory[target]);
   }
 
   getEntries() {
-    return thiefStory.slice(0, this.getState().progressIndex)
+    return this.getState().storyEntries;
   }
 
   getChoices() {
     return this.getState().storyChoices;
-  }
-
-  getStory() {
-    const entries = this.getEntries();
-    const choices = this.getChoices();
   }
 });

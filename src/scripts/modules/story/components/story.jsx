@@ -28,7 +28,7 @@ class __Story extends React.Component {
       <div className="story">
         {this.props.entries.map((entry, i) => {
           return React.cloneElement(entry, {
-            choiceIndex: this.props.choices[i]
+            choice: this.props.choices[i]
           });
         })}
       </div>
