@@ -14,6 +14,14 @@ class __ActionsEntry extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.doIfActive = this.doIfActive.bind(this);
+  }
+
+  doIfActive(fn) {
+    if (this.props.active) {
+      fn();
+    }
   }
 
   renderActions() {
@@ -22,8 +30,13 @@ class __ActionsEntry extends React.Component {
       if (this.props.choice == action.id) {
         classNames.push("is-chosen");
       }
+      
       return (
-        <button className={classNames.join(" ")} onClick={action.fn} key={i}>
+        <button
+          className={classNames.join(" ")}
+          onClick={() => this.doIfActive(action.fn)}
+          key={i}
+        >
           {action.label}
         </button>
       );
