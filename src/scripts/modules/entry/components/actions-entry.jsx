@@ -1,17 +1,9 @@
 import entryStyles from 'styles/entry';
+import actionEntryStyles from 'styles/actions-entry';
 
 import React from 'react';
-import connectToStores from 'alt-utils/lib/connectToStores';
 
-class __ActionsEntry extends React.Component {
-  static getStores() {
-    return [];
-  }
-
-  static getPropsFromStores() {
-    return {};
-  }
-
+class ActionsEntry extends React.Component {
   constructor(props) {
     super(props);
 
@@ -49,7 +41,7 @@ class __ActionsEntry extends React.Component {
       entryActionClassNames.push("is-disabled");
     }
     return (
-      <div className="entry">
+      <div className="entry actions-entry">
         <div className="entry-text">{this.props.children}</div>
         <div className={entryActionClassNames.join(" ")}>
           {this.renderActions()}
@@ -59,4 +51,4 @@ class __ActionsEntry extends React.Component {
   }
 }
 
-export default connectToStores(__ActionsEntry);
+export default ActionsEntry;

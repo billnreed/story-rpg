@@ -1,4 +1,6 @@
 .entry {
+  margin-bottom: 20px;
+
   .entry-text {
     margin-bottom: 20px;
 
@@ -7,43 +9,4 @@
     }
   }
 
-  .entry-actions {
-    margin-bottom: 20px;
-
-    .entry-action {
-      margin-right: 20px;
-      background: #fff;
-      font-size: 1em;
-      border: none;
-      border-bottom-width: 1px;
-
-      color: #000;
-      border-bottom-color: #000;
-      border-bottom-style: dashed;
-
-      &:hover,
-      &.is-chosen {
-        cursor: pointer;
-        border-bottom-style: solid;
-      }
-    }
-
-    &.is-disabled {
-      .entry-action {
-        color: #ccc;
-        border-bottom-color: #ccc;
-        border-bottom-style: dashed;
-
-        &.is-chosen {
-          color: #000;
-          border-color: #000;
-          border-bottom-style: solid;
-        }
-
-        &:hover {
-          cursor: default;
-        }
-      }
-    }
-  }
 }

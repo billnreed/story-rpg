@@ -1,0 +1,53 @@
+.lock-pick {
+  .slots,
+  .open-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .slots {
+    .slot {
+      position: relative;
+
+      display: inline-block;
+      margin: 5px;
+
+      width: 20px;
+      height: 20px;
+
+      border: 1px solid #000;
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      &.is-selected {
+        &::after {
+          position: absolute;
+          display: block;
+          content: '';
+
+          width: 10px;
+          height: 10px;
+          top: 4px;
+          left: 4px;
+
+          background: #000;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .open-button {
+    background: #fff;
+    font-size: 1em;
+    border: none;
+    margin-left: 10px;
+    border-bottom: 1px dashed #000;
+
+    &:hover {
+      border-bottom: 1px solid #000;
+      cursor: pointer;
+    }
+  }
+}
