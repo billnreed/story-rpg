@@ -2,8 +2,6 @@ import alt from 'scripts/alt';
 
 import thiefStory from 'data/stories/thief';
 
-// import testStory from 'data/stories/test';
-
 import StoryActions from 'scripts/modules/story/actions/story-actions';
 
 export default alt.createStore(class {
