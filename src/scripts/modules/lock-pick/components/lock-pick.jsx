@@ -5,6 +5,8 @@ import connectToStores from 'alt-utils/lib/connectToStores';
 
 import React from 'react';
 
+import Choice from 'scripts/modules/choice/components/choice';
+
 import LockPickActions from 'scripts/modules/lock-pick/actions/lock-pick-actions';
 import LockPickStore from 'scripts/modules/lock-pick/stores/lock-pick-store';
 
@@ -37,7 +39,12 @@ class __LockPick extends React.Component {
   renderUnlocked() {
     if (this.props.isSolved) {
       return (
-        <button className="open-button" onClick={this.props.fn}>Open.</button>
+        <Choice
+          label="Open."
+          active={this.props.active}
+          chosen={this.props.choice}
+          fn={this.props.fn}
+        />
       )
     }
   }
@@ -66,9 +73,9 @@ class __LockPick extends React.Component {
 
 __LockPick.PropTypes = {
   lockPickKey: React.PropTypes.string,
-  isSolved: React.PropTypes.bool,
   fn: React.PropTypes.func,
-  slots: React.PropTypes.array
+  active: React.PropTypes.bool,
+  choice: React.PropTypes.string
 }
 
 export default connectToStores(__LockPick);
