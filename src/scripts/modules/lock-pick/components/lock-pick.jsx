@@ -54,7 +54,7 @@ class __LockPick extends React.Component {
             slotClassNames = slotClassNames.join(" ");
 
             return (
-              <div className={slotClassNames} onClick={() => this.toggleSlot(i)} key={`this.props.lockPickKey-${i}`}></div>
+              <div className={slotClassNames} onClick={() => this.toggleSlot(i)} key={`${this.props.lockPickKey}-${i}`}></div>
             );
           })}
         </div>

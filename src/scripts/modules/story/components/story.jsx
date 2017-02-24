@@ -13,7 +13,10 @@ class __Story extends React.Component {
   }
 
   static getPropsFromStores() {
-    return {entries: StoryStore.getEntries(), choices: StoryStore.getChoices()};
+    return {
+      entries: StoryStore.getEntries(),
+      choices: StoryStore.getChoices()
+    };
   }
 
   constructor(props) {
@@ -24,11 +27,11 @@ class __Story extends React.Component {
     return this.props.entries.map((entry, i) => {
       const isActive = this.props.entries.length - 1 == i;
       return React.cloneElement(entry, {
+        key: `entry-${i}`,
         choice: this.props.choices[i],
         active: isActive
       });
     });
-
   }
 
   render() {
