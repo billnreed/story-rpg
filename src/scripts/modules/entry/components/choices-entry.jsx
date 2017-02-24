@@ -14,7 +14,7 @@ class ChoicesEntry extends React.Component {
         <Choice
           label={choice.label}
           active={this.props.active}
-          chosen={this.props.choice == choice.id}
+          chosen={this.props.chosenId == choice.id}
           fn={choice.fn}
           key={i}
         />
@@ -26,7 +26,7 @@ class ChoicesEntry extends React.Component {
     return (
       <Entry
         text={this.props.text}
-        choice={this.props.choice}
+        chosenId={this.props.chosenId}
         active={this.props.active}
       >
         {this.renderActions()}
@@ -37,12 +37,12 @@ class ChoicesEntry extends React.Component {
 
 ChoicesEntry.propTypes = {
   active: React.PropTypes.bool.isRequired,
-  choice: React.PropTypes.string.isRequired,
+  chosenId: React.PropTypes.string.isRequired,
   choices: React.PropTypes.array.isRequired
 }
 
 ChoicesEntry.defaultProps = {
-  choice: ""
+  chosenId: ""
 }
 
 export default ChoicesEntry;

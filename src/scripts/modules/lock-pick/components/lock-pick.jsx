@@ -40,10 +40,10 @@ class __LockPick extends React.Component {
     if (this.props.isSolved) {
       return (
         <Choice
-          label="Open."
           active={this.props.active}
-          chosen={this.props.choice}
-          fn={this.props.fn}
+          label={this.props.choice.label}
+          chosen={this.props.chosenId == this.props.choice.id}
+          fn={this.props.choice.fn}
         />
       )
     }
@@ -73,9 +73,9 @@ class __LockPick extends React.Component {
 
 __LockPick.PropTypes = {
   lockPickKey: React.PropTypes.string.isRequired,
-  fn: React.PropTypes.func.isRequired,
+  choice: React.PropTypes.object.isRequired,
   active: React.PropTypes.bool.isRequired,
-  choice: React.PropTypes.string.isRequired
+  chosenId: React.PropTypes.string.isRequired
 }
 
 export default connectToStores(__LockPick);

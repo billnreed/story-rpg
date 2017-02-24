@@ -21,7 +21,7 @@ export default alt.createStore(class {
 
     const lastEntry = this.storyEntries[this.storyEntries.length - 1];
     lastEntry.active = false;
-    lastEntry.choice = source;
+    lastEntry.chosenId = source;
 
     const newEntry = thiefStory[target];
     newEntry.active = true;

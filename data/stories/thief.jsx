@@ -14,7 +14,8 @@ export default {
       {
         id: "choose-open-your-eyes",
         label: "Open your eyes.",
-        fn: () => StoryActions.choose("choose-open-your-eyes", "openEyes")
+        fn: StoryActions.choose,
+        target: "openEyes"
       }
     ],
   }),
@@ -28,12 +29,14 @@ export default {
       {
         id: "choose-look-around",
         label: "Look around.",
-        fn: () => StoryActions.choose("choose-look-around", "lookAround")
+        fn: StoryActions.choose,
+        target: "lookAround"
       },
       {
         id: "choose-get-up",
         label: "Get up.",
-        fn: () => StoryActions.choose("choose-get-up", "getUp")
+        fn: StoryActions.choose,
+        target: "getUp"
       }
     ],
   }),
@@ -46,7 +49,8 @@ export default {
       {
         id: "choose-get-up",
         label: "Get up.",
-        fn: () => StoryActions.choose("choose-get-up", "getUp")
+        fn: StoryActions.choose,
+        target: "getUp"
       }
     ],
   }),
@@ -60,7 +64,8 @@ export default {
       {
         id: "open-horse-stall-door",
         label: "Open the door.",
-        fn: () => StoryActions.choose("open-horse-stall-door", "openHorseStallDoor")
+        fn: StoryActions.choose,
+        target: "openHorseStallDoor"
       }
     ],
   }),
@@ -73,14 +78,20 @@ export default {
       {
         id: "pick-horse-stall-door-lock",
         label: "Pick the lock.",
-        fn: () => StoryActions.choose("pick-horse-stall-door-lock", "pickHorseStallDoorLock")
+        fn: StoryActions.choose,
+        target: "pickHorseStallDoorLock"
       }
     ],
   }),
 
   pickHorseStallDoorLock: new LockPickEntry({
     lockPickKey: "pick-horse-stall-door-lock",
-    fn: () => StoryActions.choose("pick-horse-stall-door-lock", "unlockedHorseStallDoor")
+    choice: {
+      id: "pick-horse-stall-door-lock",
+      label: "Open.",
+      fn: StoryActions.choose,
+      target: "unlockedHorseStallDoor"
+    },
   }),
 
   unlockedHorseStallDoor: new ChoicesEntry({

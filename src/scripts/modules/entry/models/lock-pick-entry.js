@@ -7,5 +7,14 @@ export default class LockPickEntry extends Entry {
     super(entry, LockPickEntryComponent);
     this.lockPickKey = entry.lockPickKey;
     this.fn = entry.fn;
+    this.choice = this.parseChoice(entry.choice);
+  }
+
+  parseChoice(rawChoice) {
+    return {
+      id: rawChoice.id,
+      label: rawChoice.label,
+      fn: () => { rawChoice.fn(rawChoice.id, rawChoice.target) }
+    }
   }
 }

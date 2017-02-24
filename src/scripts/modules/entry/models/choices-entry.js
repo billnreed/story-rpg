@@ -5,6 +5,17 @@ import ChoicesEntryComponent from 'scripts/modules/entry/components/choices-entr
 export default class ChoicesEntry extends Entry {
   constructor(entry) {
     super(entry, ChoicesEntryComponent);
-    this.choices = entry.choices;
+
+    this.choices = this.parseChoices(entry.choices);
+  }
+
+  parseChoices(rawChoices) {
+    return rawChoices.map(rawChoice => {
+      return {
+        id: rawChoice.id,
+        label: rawChoice.label,
+        fn: () => { rawChoice.fn(rawChoice.id, rawChoice.target) }
+      }
+    });
   }
 }

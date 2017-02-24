@@ -26,7 +26,7 @@ class Entry extends React.Component {
 Entry.PropTypes = {
   text: React.PropTypes.array,
   active: React.PropTypes.bool.isRequired,
-  choice: React.PropTypes.string.isRequired,
+  chosenId: React.PropTypes.string.isRequired,
 }
 
 Entry.defaultProps = {

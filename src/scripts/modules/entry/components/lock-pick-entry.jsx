@@ -12,10 +12,11 @@ class LockPickEntry extends React.Component {
     return (
       <Entry
         active={this.props.active}
-        choice={this.props.choice}
+        chosenId={this.props.chosenId}
       >
         <LockPick
           active={this.props.active}
+          chosenId={this.props.chosenId}
           choice={this.props.choice}
           lockPickKey={this.props.lockPickKey}
           fn={this.props.fn}
@@ -26,8 +27,10 @@ class LockPickEntry extends React.Component {
 }
 
 LockPickEntry.PropTypes = {
+  active: React.PropTypes.bool.isRequired,
+  chosenId: React.PropTypes.string.isRequired,
   lockPickKey: React.PropTypes.string.isRequired,
-  fn: React.PropTypes.func.isRequired
+  choice: React.PropTypes.object.isRequired
 }
 
 export default LockPickEntry;
