@@ -64,4 +64,11 @@ class __LockPick extends React.Component {
   }
 }
 
+__LockPick.PropTypes = {
+  lockPickKey: React.PropTypes.string,
+  isSolved: React.PropTypes.bool,
+  fn: React.PropTypes.func,
+  slots: React.PropTypes.array
+}
+
 export default connectToStores(__LockPick);

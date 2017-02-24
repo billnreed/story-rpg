@@ -51,4 +51,10 @@ class ActionsEntry extends React.Component {
   }
 }
 
+ActionsEntry.propTypes = {
+  active: React.PropTypes.bool,
+  choice: React.PropTypes.string,
+  actions: React.PropTypes.array
+}
+
 export default ActionsEntry;

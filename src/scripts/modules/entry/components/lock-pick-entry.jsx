@@ -5,7 +5,7 @@ import lockPickEntryStyles from 'styles/lock-pick-entry';
 
 import LockPick from 'scripts/modules/lock-pick/components/lock-pick';
 
-export default class LockPickEntry extends React.Component {
+class LockPickEntry extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -18,3 +18,10 @@ export default class LockPickEntry extends React.Component {
     )
   }
 }
+
+LockPickEntry.PropTypes = {
+  lockPickKey: React.PropTypes.string,
+  fn: React.PropTypes.func
+}
+
+export default LockPickEntry;

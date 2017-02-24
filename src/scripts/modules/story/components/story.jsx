@@ -43,4 +43,9 @@ class __Story extends React.Component {
   }
 }
 
+__Story.PropTypes = {
+  entries: React.PropTypes.array,
+  choices: React.PropTypes.array
+}
+
 export default connectToStores(__Story);
