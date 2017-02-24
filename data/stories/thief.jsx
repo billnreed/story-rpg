@@ -6,7 +6,7 @@ import LockPickEntry from 'scripts/modules/entry/models/lock-pick-entry';
 import StoryActions from 'scripts/modules/story/actions/story-actions';
 
 export default {
-  beginning: new ActionsEntry('beginning', {
+  beginning: new ActionsEntry({
     text: [
       'You wake up.'
     ],
@@ -19,7 +19,7 @@ export default {
     ],
   }),
 
-  openEyes: new ActionsEntry('openEyes', {
+  openEyes: new ActionsEntry({
     text: [
       'A streak of sunlight coming through a hole in the ceiling warms your face.',
       'Rubbing your eyes, you sit up from your makeshift bed of hay.'
@@ -38,7 +38,7 @@ export default {
     ],
   }),
 
-  lookAround: new ActionsEntry('lookAround', {
+  lookAround: new ActionsEntry({
     text: [
       'Your neighbor from the stall next to you whinnies with the hope of being fed. Probably a sign that you should sneak out of the horse stable soon to avoid being found. It served well as shelter for the night, but nothing more.'
     ],
@@ -51,7 +51,7 @@ export default {
     ],
   }),
 
-  getUp: new ActionsEntry('getUp', {
+  getUp: new ActionsEntry({
     text: [
       'You stand up and brush the remnant strands of hay from your hair and clothes.',
       'The door of the horse stall you slept in is in front of you.'
@@ -65,7 +65,7 @@ export default {
     ],
   }),
 
-  openHorseStallDoor: new ActionsEntry('openHorseStallDoor', {
+  openHorseStallDoor: new ActionsEntry({
     text: [
       "You try to open the door, but it is locked from the other side. The stable boy must have come in last night and saw the door was unlocked. You're lucky that he didn't see you in the stall. Can't be that sloppy next time."
     ],
@@ -78,12 +78,12 @@ export default {
     ],
   }),
 
-  pickHorseStallDoorLock: new LockPickEntry('pickHorseStallDoorLock', {
+  pickHorseStallDoorLock: new LockPickEntry({
     lockPickKey: "pick-horse-stall-door-lock",
     fn: () => StoryActions.choose("pick-horse-stall-door-lock", "unlockedHorseStallDoor")
   }),
 
-  unlockedHorseStallDoor:  new ActionsEntry("unlockedHorseStallDoor", {
+  unlockedHorseStallDoor:  new ActionsEntry({
     text: [
       'You manage to pick the lock and the door swings open.'
     ],

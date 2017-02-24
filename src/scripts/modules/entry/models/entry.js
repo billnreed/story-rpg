@@ -1,7 +1,5 @@
 export default class Entry {
-  constructor(id, entry, Component) {
-    this.id = id;
-
+  constructor(entry, Component) {
     this.text = entry.text;
     this.active = entry.active;
     this.choice = entry.choice;
