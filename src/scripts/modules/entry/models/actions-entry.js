@@ -6,7 +6,5 @@ export default class ActionsEntry extends Entry {
   constructor(id, entry) {
     super(id, entry, ActionsEntryComponent);
     this.actions = entry.actions;
-    this.active = entry.active;
-    this.choice = entry.choice;
   }
 }
