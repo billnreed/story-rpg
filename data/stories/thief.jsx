@@ -1,16 +1,16 @@
 import React from 'react';
 
-import ActionsEntry from 'scripts/modules/entry/models/actions-entry';
+import ChoicesEntry from 'scripts/modules/entry/models/choices-entry';
 import LockPickEntry from 'scripts/modules/entry/models/lock-pick-entry';
 
 import StoryActions from 'scripts/modules/story/actions/story-actions';
 
 export default {
-  beginning: new ActionsEntry({
+  beginning: new ChoicesEntry({
     text: [
       'You wake up.'
     ],
-    actions: [
+    choices: [
       {
         id: "choose-open-your-eyes",
         label: "Open your eyes.",
@@ -19,12 +19,12 @@ export default {
     ],
   }),
 
-  openEyes: new ActionsEntry({
+  openEyes: new ChoicesEntry({
     text: [
       'A streak of sunlight coming through a hole in the ceiling warms your face.',
       'Rubbing your eyes, you sit up from your makeshift bed of hay.'
     ],
-    actions: [
+    choices: [
       {
         id: "choose-look-around",
         label: "Look around.",
@@ -38,11 +38,11 @@ export default {
     ],
   }),
 
-  lookAround: new ActionsEntry({
+  lookAround: new ChoicesEntry({
     text: [
       'Your neighbor from the stall next to you whinnies with the hope of being fed. Probably a sign that you should sneak out of the horse stable soon to avoid being found. It served well as shelter for the night, but nothing more.'
     ],
-    actions: [
+    choices: [
       {
         id: "choose-get-up",
         label: "Get up.",
@@ -51,12 +51,12 @@ export default {
     ],
   }),
 
-  getUp: new ActionsEntry({
+  getUp: new ChoicesEntry({
     text: [
       'You stand up and brush the remnant strands of hay from your hair and clothes.',
       'The door of the horse stall you slept in is in front of you.'
     ],
-    actions: [
+    choices: [
       {
         id: "open-horse-stall-door",
         label: "Open the door.",
@@ -65,11 +65,11 @@ export default {
     ],
   }),
 
-  openHorseStallDoor: new ActionsEntry({
+  openHorseStallDoor: new ChoicesEntry({
     text: [
       "You try to open the door, but it is locked from the other side. The stable boy must have come in last night and saw the door was unlocked. You're lucky that he didn't see you in the stall. Can't be that sloppy next time."
     ],
-    actions: [
+    choices: [
       {
         id: "pick-horse-stall-door-lock",
         label: "Pick the lock.",
@@ -83,11 +83,11 @@ export default {
     fn: () => StoryActions.choose("pick-horse-stall-door-lock", "unlockedHorseStallDoor")
   }),
 
-  unlockedHorseStallDoor:  new ActionsEntry({
+  unlockedHorseStallDoor: new ChoicesEntry({
     text: [
       'You manage to pick the lock and the door swings open.'
     ],
-    actions: []
+    choices: []
   })
 
 };

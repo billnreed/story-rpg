@@ -3,8 +3,6 @@ import connectToStores from 'alt-utils/lib/connectToStores';
 
 import storyStyles from 'styles/story';
 
-import ActionsEntry from 'scripts/modules/entry/components/actions-entry';
-
 import StoryStore from 'scripts/modules/story/stores/story-store';
 
 class __Story extends React.Component {

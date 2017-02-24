@@ -4,7 +4,7 @@ import React from 'react';
 
 import Choice from 'scripts/modules/choice/components/choice';
 
-class ActionsEntry extends React.Component {
+class ChoicesEntry extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,13 +18,13 @@ class ActionsEntry extends React.Component {
   }
 
   renderActions() {
-    return this.props.actions.map((action, i) => {
+    return this.props.choices.map((choice, i) => {
       return (
         <Choice
-          label={action.label}
+          label={choice.label}
           active={this.props.active}
-          chosen={this.props.choice == action.id}
-          fn={action.fn}
+          chosen={this.props.choice == choice.id}
+          fn={choice.fn}
           key={i}
         />
       );
@@ -37,7 +37,7 @@ class ActionsEntry extends React.Component {
       entryActionClassNames.push("is-disabled");
     }
     return (
-      <div className="entry actions-entry">
+      <div className="entry">
         <div className="entry-text">{this.props.children}</div>
         <div className={entryActionClassNames.join(" ")}>
           {this.renderActions()}
@@ -47,10 +47,10 @@ class ActionsEntry extends React.Component {
   }
 }
 
-ActionsEntry.propTypes = {
+ChoicesEntry.propTypes = {
   active: React.PropTypes.bool,
   choice: React.PropTypes.string,
-  actions: React.PropTypes.array
+  choices: React.PropTypes.array
 }
 
-export default ActionsEntry;
+export default ChoicesEntry;
