@@ -15,7 +15,6 @@ class __Story extends React.Component {
   static getPropsFromStores() {
     return {
       entries: StoryStore.getEntries(),
-      choices: StoryStore.getChoices()
     };
   }
 
@@ -25,13 +24,21 @@ class __Story extends React.Component {
 
   renderEntries() {
     return this.props.entries.map((entry, i) => {
-      const isActive = this.props.entries.length - 1 == i;
-      return React.cloneElement(entry, {
-        key: `entry-${i}`,
-        choice: this.props.choices[i],
-        active: isActive
-      });
+      return (
+        <entry.Component {...entry} key={`entry-${i}`}>
+          {this.renderEntryText(entry)}
+        </entry.Component>
+      )
     });
+  }
+
+  renderEntryText(entry) {
+    const textLines = entry.text;
+    if (textLines) {
+      return (
+        textLines.map((line, i) => <p key={`entry-${entry.id}-line-${i}`}>{line}</p>)
+      );
+    }
   }
 
   render() {
