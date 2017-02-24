@@ -37,17 +37,4 @@
       }
     }
   }
-
-  .open-button {
-    background: #fff;
-    font-size: 1em;
-    border: none;
-    margin-left: 10px;
-    border-bottom: 1px dashed #000;
-
-    &:hover {
-      border-bottom: 1px solid #000;
-      cursor: pointer;
-    }
-  }
 }

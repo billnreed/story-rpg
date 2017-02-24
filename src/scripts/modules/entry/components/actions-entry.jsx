@@ -1,5 +1,4 @@
 import entryStyles from 'styles/entry';
-import actionEntryStyles from 'styles/actions-entry';
 
 import React from 'react';
 

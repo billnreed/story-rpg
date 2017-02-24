@@ -1,3 +1,5 @@
+import choiceStyles from 'styles/choice';
+
 import React from 'react';
 
 class Choice extends React.Component {
@@ -8,7 +10,7 @@ class Choice extends React.Component {
   }
 
   render() {
-    const classNames = `entry-action ${this.props.chosen ? 'is-chosen' : ''}`;
+    const classNames = `choice ${this.props.chosen ? 'is-chosen' : ''}`;
 
     return (
       <button
