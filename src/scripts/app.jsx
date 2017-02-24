@@ -14,8 +14,6 @@ export default class extends React.Component {
     return (
       <div className="app">
         <Story />
-        {/* <Story /> */}
-        {/* <Story /> */}
       </div>
     );
   }

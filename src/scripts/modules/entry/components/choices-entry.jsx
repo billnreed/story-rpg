@@ -36,9 +36,13 @@ class ChoicesEntry extends React.Component {
 }
 
 ChoicesEntry.propTypes = {
-  active: React.PropTypes.bool,
-  choice: React.PropTypes.string,
-  choices: React.PropTypes.array
+  active: React.PropTypes.bool.isRequired,
+  choice: React.PropTypes.string.isRequired,
+  choices: React.PropTypes.array.isRequired
+}
+
+ChoicesEntry.defaultProps = {
+  choice: ""
 }
 
 export default ChoicesEntry;

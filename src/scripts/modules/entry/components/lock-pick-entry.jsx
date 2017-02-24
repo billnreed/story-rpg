@@ -26,8 +26,8 @@ class LockPickEntry extends React.Component {
 }
 
 LockPickEntry.PropTypes = {
-  lockPickKey: React.PropTypes.string,
-  fn: React.PropTypes.func
+  lockPickKey: React.PropTypes.string.isRequired,
+  fn: React.PropTypes.func.isRequired
 }
 
 export default LockPickEntry;

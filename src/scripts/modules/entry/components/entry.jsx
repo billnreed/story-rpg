@@ -15,20 +15,22 @@ class Entry extends React.Component {
   }
 
   renderEntryText() {
-    if (this.props.text) {
-      return (
-        <div className="entry-text">
-          {this.props.text.map((line, i) => <p key={`entry-text-${i}`}>{line}</p>)}
-        </div>
-      );
-    }
+    return (
+      <div className="entry-text">
+        {this.props.text.map((line, i) => <p key={`entry-text-${i}`}>{line}</p>)}
+      </div>
+    );
   }
 }
 
 Entry.PropTypes = {
   text: React.PropTypes.array,
-  active: React.PropTypes.bool,
-  choice: React.PropTypes.string,
+  active: React.PropTypes.bool.isRequired,
+  choice: React.PropTypes.string.isRequired,
+}
+
+Entry.defaultProps = {
+  text: []
 }
 
 export default Entry;
