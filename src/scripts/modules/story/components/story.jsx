@@ -23,10 +23,8 @@ class __Story extends React.Component {
   renderEntries() {
     return this.props.entries.map((entry, i) => {
       return (
-        <entry.Component {...entry} key={`entry-${i}`}>
-          {this.renderEntryText(entry)}
-        </entry.Component>
-      )
+        <entry.Component {...entry} key={`entry-${i}`} />
+      );
     });
   }
 

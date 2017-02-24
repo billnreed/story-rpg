@@ -1,7 +1,6 @@
 import React from 'react';
 
-import entryStyles from 'styles/entry';
-
+import Entry from 'scripts/modules/entry/components/entry';
 import LockPick from 'scripts/modules/lock-pick/components/lock-pick';
 
 class LockPickEntry extends React.Component {
@@ -11,14 +10,17 @@ class LockPickEntry extends React.Component {
 
   render() {
     return (
-      <div className="entry lock-pick-entry">
+      <Entry
+        active={this.props.active}
+        choice={this.props.choice}
+      >
         <LockPick
           active={this.props.active}
           choice={this.props.choice}
           lockPickKey={this.props.lockPickKey}
           fn={this.props.fn}
         />
-      </div>
+      </Entry>
     );
   }
 }

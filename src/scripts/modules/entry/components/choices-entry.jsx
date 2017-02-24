@@ -1,7 +1,6 @@
-import entryStyles from 'styles/entry';
-
 import React from 'react';
 
+import Entry from 'scripts/modules/entry/components/entry';
 import Choice from 'scripts/modules/choice/components/choice';
 
 class ChoicesEntry extends React.Component {
@@ -24,13 +23,14 @@ class ChoicesEntry extends React.Component {
   }
 
   render() {
-    const entryClassNames = `entry ${!this.props.active ? 'is-disabled' : ''}`
-
     return (
-      <div className={entryClassNames}>
-        <div className="entry-text">{this.props.children}</div>
+      <Entry
+        text={this.props.text}
+        choice={this.props.choice}
+        active={this.props.active}
+      >
         {this.renderActions()}
-      </div>
+      </Entry>
     )
   }
 }
