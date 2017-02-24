@@ -7,14 +7,6 @@ import Choice from 'scripts/modules/choice/components/choice';
 class ChoicesEntry extends React.Component {
   constructor(props) {
     super(props);
-
-    this.doIfActive = this.doIfActive.bind(this);
-  }
-
-  doIfActive(fn) {
-    if (this.props.active) {
-      fn();
-    }
   }
 
   renderActions() {
@@ -32,16 +24,12 @@ class ChoicesEntry extends React.Component {
   }
 
   render() {
-    let entryActionClassNames = ["entry-actions"];
-    if (!this.props.active) {
-      entryActionClassNames.push("is-disabled");
-    }
+    const entryClassNames = `entry ${!this.props.active ? 'is-disabled' : ''}`
+
     return (
-      <div className="entry">
+      <div className={entryClassNames}>
         <div className="entry-text">{this.props.children}</div>
-        <div className={entryActionClassNames.join(" ")}>
-          {this.renderActions()}
-        </div>
+        {this.renderActions()}
       </div>
     )
   }
