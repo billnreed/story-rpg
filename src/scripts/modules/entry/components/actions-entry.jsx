@@ -3,6 +3,8 @@ import actionEntryStyles from 'styles/actions-entry';
 
 import React from 'react';
 
+import Choice from 'scripts/modules/choice/components/choice';
+
 class ActionsEntry extends React.Component {
   constructor(props) {
     super(props);
@@ -18,19 +20,14 @@ class ActionsEntry extends React.Component {
 
   renderActions() {
     return this.props.actions.map((action, i) => {
-      let classNames = ["entry-action"];
-      if (this.props.choice == action.id) {
-        classNames.push("is-chosen");
-      }
-
       return (
-        <button
-          className={classNames.join(" ")}
-          onClick={() => this.doIfActive(action.fn)}
+        <Choice
+          label={action.label}
+          active={this.props.active}
+          chosen={this.props.choice == action.id}
+          fn={action.fn}
           key={i}
-        >
-          {action.label}
-        </button>
+        />
       );
     });
   }
