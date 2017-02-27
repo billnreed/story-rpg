@@ -33,7 +33,9 @@ class __LockPick extends React.Component {
   }
 
   toggleSlot(index) {
-    LockPickActions.toggleSlot(this.props.lockPickKey, index);
+    if (this.props.active) {
+      LockPickActions.toggleSlot(this.props.lockPickKey, index);
+    }
   }
 
   renderUnlocked() {
@@ -49,21 +51,21 @@ class __LockPick extends React.Component {
     }
   }
 
+  renderSlots() {
+    return this.props.slots.map((slot, i) => {
+      const slotClassNames = `slot ${slot.selected ? "is-selected" : ""}`;
+
+      return (
+        <div className={slotClassNames} onClick={() => this.toggleSlot(i)} key={`${this.props.lockPickKey}-${i}`}></div>
+      );
+    });
+  }
+
   render() {
     return (
       <div className="lock-pick">
         <div className="slots">
-          {this.props.slots.map((slot, i) => {
-            let slotClassNames = ["slot"];
-            if (slot.selected) {
-              slotClassNames.push("is-selected");
-            }
-            slotClassNames = slotClassNames.join(" ");
-
-            return (
-              <div className={slotClassNames} onClick={() => this.toggleSlot(i)} key={`${this.props.lockPickKey}-${i}`}></div>
-            );
-          })}
+          {this.renderSlots()}
         </div>
         {this.renderUnlocked()}
       </div>

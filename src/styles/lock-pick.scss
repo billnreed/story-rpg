@@ -38,3 +38,13 @@
     }
   }
 }
+
+.is-disabled {
+  .lock-pick {
+    .slots {
+      .slot {
+        cursor: default;
+      }
+    }
+  }
+}
