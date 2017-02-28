@@ -87,8 +87,8 @@ export default {
       "You also know of a patch of berries in the forest next to town where you could get a meal."
     ],
     choices: [
-      ChoicesFactory.makeChoiceAndRevealInventory("Steal an apple.", "stealAnApple"),
-      ChoicesFactory.makeChoiceAndRevealInventory("Search for berries.", "searchForBerries"),
+      ChoicesFactory.makeChoiceAndAddToInventory("Steal an apple.", "stealAnApple", 'apple'),
+      ChoicesFactory.makeChoiceAndAddToInventory("Search for berries.", "searchForBerries", 'berries'),
     ]
   }),
 

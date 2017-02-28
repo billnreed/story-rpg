@@ -1,4 +1,5 @@
 import StoryActions from 'scripts/modules/story/actions/story-actions';
+import InventoryActions from 'scripts/modules/inventory/actions/inventory-actions';
 
 export default class ChoiceFactory {
   static makeChoice(label, target) {
@@ -14,12 +15,12 @@ export default class ChoiceFactory {
     }
   }
 
-  static makeChoiceAndRevealInventory(label, target) {
+  static makeChoiceAndAddToInventory(label, target, item) {
     const choice = this.makeChoice(label, target);
     const originalChoiceFn = choice.fn;
-    
+
     choice.fn = () => {
-      StoryActions.revealInventory();
+      InventoryActions.add(item);
       originalChoiceFn();
     }
 

@@ -9,16 +9,12 @@ export default alt.createStore(class {
     this.storyEntries = [thiefStory.beginning];
     thiefStory.beginning.active = true;
 
-    this.inventoryRevealed = false;
-
     this.bindListeners({
-      handleChoose: StoryActions.CHOOSE,
-      handleRevealInventory: StoryActions.REVEAL_INVENTORY
+      handleChoose: StoryActions.CHOOSE
     });
 
     this.exportPublicMethods({
-      getEntries: this.getEntries,
-      isInventoryRevealed: this.isInventoryRevealed
+      getEntries: this.getEntries
     });
   }
 
@@ -34,15 +30,7 @@ export default alt.createStore(class {
     this.storyEntries.push(newEntry);
   }
 
-  handleRevealInventory() {
-    this.inventoryRevealed = true;
-  }
-
   getEntries() {
     return this.getState().storyEntries;
-  }
-
-  isInventoryRevealed() {
-    return this.getState().inventoryRevealed;
   }
 });
