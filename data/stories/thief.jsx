@@ -3,7 +3,7 @@ import React from 'react';
 import ChoicesEntry from 'scripts/modules/entry/models/choices-entry';
 import LockPickEntry from 'scripts/modules/entry/models/lock-pick-entry';
 
-import StoryActions from 'scripts/modules/story/actions/story-actions';
+import ChoicesFactory from 'scripts/modules/choice/factories/choice-factory';
 
 export default {
   beginning: new ChoicesEntry({
@@ -11,12 +11,7 @@ export default {
       'You wake up.'
     ],
     choices: [
-      {
-        id: "choose-open-your-eyes",
-        label: "Open your eyes.",
-        fn: StoryActions.choose,
-        target: "openEyes"
-      }
+      ChoicesFactory.makeChoice("Open your eyes", "openEyes")
     ],
   }),
 
@@ -26,32 +21,17 @@ export default {
       'Rubbing your eyes, you sit up from your makeshift bed of hay.'
     ],
     choices: [
-      {
-        id: "choose-look-around",
-        label: "Look around.",
-        fn: StoryActions.choose,
-        target: "lookAround"
-      },
-      {
-        id: "choose-get-up",
-        label: "Get up.",
-        fn: StoryActions.choose,
-        target: "getUp"
-      }
+      ChoicesFactory.makeChoice("Look around.", "lookAround"),
+      ChoicesFactory.makeChoice("Get up.", "getUp")
     ],
   }),
 
   lookAround: new ChoicesEntry({
     text: [
-      'Your neighbor from the stall next to you whinnies with the hope of being fed. Probably a sign that you should sneak out of the horse stable soon to avoid being found. It served well as shelter for the night, but nothing more.'
+      'Your neighbor from the stall next to you whinnies with the hope of being fed. Probably a sign that you should sneak out of the horse stables soon to avoid being found. It served well as shelter for the night, but nothing more.'
     ],
     choices: [
-      {
-        id: "choose-get-up",
-        label: "Get up.",
-        fn: StoryActions.choose,
-        target: "getUp"
-      }
+      ChoicesFactory.makeChoice("Get up.", "getUp")
     ],
   }),
 
@@ -61,37 +41,22 @@ export default {
       'The door of the horse stall you slept in is in front of you.'
     ],
     choices: [
-      {
-        id: "open-horse-stall-door",
-        label: "Open the door.",
-        fn: StoryActions.choose,
-        target: "openHorseStallDoor"
-      }
+      ChoicesFactory.makeChoice("Open the door.", "openHorseStallDoor")
     ],
   }),
 
   openHorseStallDoor: new ChoicesEntry({
     text: [
-      "You try to open the door, but it is locked from the other side. The stable boy must have come in last night and saw the door was unlocked. You're lucky that he didn't see you in the stall. Can't be that sloppy next time."
+      "You try to open the door, but it is locked from the other side. The stable boy must have come in last night and saw the door was unlocked. You're lucky that he didn't see you in the stall."
     ],
     choices: [
-      {
-        id: "pick-horse-stall-door-lock",
-        label: "Pick the lock.",
-        fn: StoryActions.choose,
-        target: "pickHorseStallDoorLock"
-      }
+      ChoicesFactory.makeChoice("Pick the lock.", "pickHorseStallDoorLock")
     ],
   }),
 
   pickHorseStallDoorLock: new LockPickEntry({
     lockPickKey: "pick-horse-stall-door-lock",
-    choice: {
-      id: "pick-horse-stall-door-lock",
-      label: "Open.",
-      fn: StoryActions.choose,
-      target: "unlockedHorseStallDoor"
-    },
+    choice: ChoicesFactory.makeChoice("Open.", "unlockedHorseStallDoor")
   }),
 
   unlockedHorseStallDoor: new ChoicesEntry({
