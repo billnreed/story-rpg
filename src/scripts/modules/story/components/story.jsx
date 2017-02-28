@@ -16,6 +16,11 @@ class __Story extends React.Component {
     };
   }
 
+  componentDidUpdate() {
+    const storyEl = document.querySelector('.story');
+    storyEl.scrollTop = storyEl.scrollHeight;
+  }
+
   constructor(props) {
     super(props);
   }
